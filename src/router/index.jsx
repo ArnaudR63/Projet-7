@@ -1,9 +1,9 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
-import Home from '../../pages/Home'
-import Fiche from '../../pages/Fiche'
-import About from '../../pages/About'
-import Error404 from '../../Components/Error'
+import Home from '../pages/Home'
+import Fiche from '../pages/Fiche'
+import About from '../pages/About'
+import Error404 from '../Components/Error'
 
 const Router = createBrowserRouter(
     [

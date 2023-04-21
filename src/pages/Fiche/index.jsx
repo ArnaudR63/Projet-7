@@ -1,19 +1,38 @@
-import Logements from '../../backend/logements.json';
+import * as Api from '../../utils/api';
 import Header from '../../Components/Header';
 import Carousel from '../../Components/Carousel';
 import Star from '../../Components/Star';
 import Collapse from '../../Components/Collapse';
 import Footer from '../../Components/Footer';
+import { useParams } from 'react-router';
+import { useEffect, useState } from 'react';
 
 function Fiche() {
-    const Id = window.location.pathname.split('/fiche/')[1];
-    const Logement = Logements.find((Logement) => Logement.id === Id)
+    const [Logement, setLogement] = useState({});
+    const params = useParams();
+    const Id = params.id;
+    useEffect(() => {
+        Api.getFiche().then((response) => {
+            let LogementFind = response.filter((Logement) => Logement.id === Id)
+            setLogement(LogementFind[0]);
+        })
+    }, [Id])
+
+    if (Object.keys(Logement).length === 0) return (<div>
+        <Header/>
+        <main id='page-loading'>
+            <div id='loader'></div>
+        </main>
+        <Footer/>
+        </div>);
     console.log(Logement)
+
     const listTags = Logement.tags.map((tag) =>
         <li key={tag}>
             {tag}
         </li>
     );
+
     return (<div id='fiche'>
         <Header />
         <main>
@@ -38,10 +57,15 @@ function Fiche() {
             </div>
             <div id='collapse'>
                 <div className='gridElement'>
-                    <Collapse title='Description' content={Logement.description} />
+                    <Collapse title='Description'>{Logement.description}</Collapse>
                 </div>
                 <div className='gridElement'>
-                    <Collapse title='Équipements' content={Logement.equipments} />
+                    <Collapse title='Équipements'>
+                        <ul className='collapse-list'>{Logement.equipments.map((equipment) => {
+                            return (<li>{equipment}</li>)
+                        })}
+                        </ul>
+                    </Collapse>
                 </div>
             </div>
         </main>

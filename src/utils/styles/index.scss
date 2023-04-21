@@ -133,6 +133,33 @@ footer {
     }
 }
 
+//Loader
+@keyframes load {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#page-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 33vw;
+}
+
+#loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid $main;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    animation: load 1s linear infinite;
+}
+
 //Home
 #home {
     #banner-home {
@@ -147,6 +174,7 @@ footer {
         background-repeat: no-repeat !important;
         border-radius: 25px;
         color: $text;
+        column-gap: 10px;
 
         @media screen and (max-width: $mobile) {
             width: auto;
@@ -289,6 +317,7 @@ footer {
             background: #F6F6F6;
             color: $main;
             padding: 10px;
+            padding-top:30px;
             width: calc(100% - 20px);
             border-bottom-left-radius: 5px;
             border-bottom-right-radius: 5px;
@@ -309,7 +338,7 @@ footer {
                 position: relative;
                 z-index: -1;
                 display: block;
-                margin-top: -20px;
+                margin-top: -35px;
             }
         }
     }
@@ -340,7 +369,7 @@ footer {
         .counter {
             position: absolute;
             bottom: 25px;
-            color:$text;
+            color: $text;
             font-size: 18px;
         }
 
@@ -512,19 +541,14 @@ footer {
                 position: relative;
                 z-index: -1;
                 display: block;
-                margin-top: -20px;
+                margin-top: -35px;
             }
         }
 
         &-list {
-            background: #F6F6F6;
-            color: $main;
             padding: 10px;
-            padding-top: 30px;
+            padding-top: 0;
             width: calc(100% - 20px);
-            border-bottom-left-radius: 5px;
-            border-bottom-right-radius: 5px;
-            font-size: 18px;
             margin-top: 0;
             height: 100%;
             font-weight: 400;
@@ -532,17 +556,6 @@ footer {
             display: flex;
             flex-direction: column;
             line-height: 25px;
-
-            &::before {
-                content: '';
-                border-top: 15px solid #F6F6F6;
-                width: calc(100% + 20px);
-                margin-left: -10px;
-                position: relative;
-                z-index: -1;
-                display: block;
-                margin-top: -20px;
-            }
         }
     }
 
@@ -662,7 +675,7 @@ footer {
         }
 
         .collapse-content::before {
-            margin-top: -30px;
+            margin-top: -35px;
         }
     }
 }
