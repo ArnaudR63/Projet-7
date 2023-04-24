@@ -322,7 +322,6 @@ footer {
             border-bottom-left-radius: 5px;
             border-bottom-right-radius: 5px;
             font-size: 24px;
-            margin-top: 0px;
             height: 100%;
             font-weight: 400;
 
@@ -339,6 +338,10 @@ footer {
                 z-index: -1;
                 display: block;
                 margin-top: -35px;
+            }
+
+            p {
+                margin-top: 0;
             }
         }
     }
@@ -532,6 +535,7 @@ footer {
             height: 100%;
             font-weight: 400;
             margin-bottom: 1px;
+            line-height: 25px;
 
             &::before {
                 content: '';
@@ -542,6 +546,10 @@ footer {
                 z-index: -1;
                 display: block;
                 margin-top: -35px;
+            }
+
+            p {
+                margin-top: 0;
             }
         }
 
@@ -555,7 +563,6 @@ footer {
             margin-bottom: 1px;
             display: flex;
             flex-direction: column;
-            line-height: 25px;
         }
     }
 

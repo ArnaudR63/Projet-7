@@ -283,7 +283,6 @@ footer .logo-footer {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   font-size: 24px;
-  margin-top: 0px;
   height: 100%;
   font-weight: 400;
 }
@@ -301,6 +300,9 @@ footer .logo-footer {
   z-index: -1;
   display: block;
   margin-top: -35px;
+}
+#about .collapse-content p {
+  margin-top: 0;
 }
 
 #fiche {
@@ -467,6 +469,7 @@ footer .logo-footer {
   height: 100%;
   font-weight: 400;
   margin-bottom: 1px;
+  line-height: 25px;
 }
 #fiche .collapse-content::before {
   content: "";
@@ -478,6 +481,9 @@ footer .logo-footer {
   display: block;
   margin-top: -35px;
 }
+#fiche .collapse-content p {
+  margin-top: 0;
+}
 #fiche .collapse-list {
   padding: 10px;
   padding-top: 0;
@@ -488,7 +494,6 @@ footer .logo-footer {
   margin-bottom: 1px;
   display: flex;
   flex-direction: column;
-  line-height: 25px;
 }
 @media screen and (max-width: 768px) {
   #fiche #carousel {

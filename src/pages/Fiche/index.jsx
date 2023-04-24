@@ -25,7 +25,6 @@ function Fiche() {
         </main>
         <Footer/>
         </div>);
-    console.log(Logement)
 
     const listTags = Logement.tags.map((tag) =>
         <li key={tag}>
@@ -57,12 +56,12 @@ function Fiche() {
             </div>
             <div id='collapse'>
                 <div className='gridElement'>
-                    <Collapse title='Description'>{Logement.description}</Collapse>
+                    <Collapse title='Description'><p>{Logement.description}</p></Collapse>
                 </div>
                 <div className='gridElement'>
                     <Collapse title='Équipements'>
                         <ul className='collapse-list'>{Logement.equipments.map((equipment) => {
-                            return (<li>{equipment}</li>)
+                            return (<li key={equipment}>{equipment}</li>)
                         })}
                         </ul>
                     </Collapse>
