@@ -4,19 +4,21 @@ import Carousel from '../../Components/Carousel';
 import Star from '../../Components/Star';
 import Collapse from '../../Components/Collapse';
 import Footer from '../../Components/Footer';
-import { useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import { useEffect, useState } from 'react';
 
 function Fiche() {
-    const [Logement, setLogement] = useState({});
+    const [Logement, setLogement] = useState({}); 
+    const error = useNavigate()
     const params = useParams();
     const Id = params.id;
     useEffect(() => {
         Api.getFiche().then((response) => {
-            let LogementFind = response.filter((Logement) => Logement.id === Id)
-            setLogement(LogementFind[0]);
+            let LogementFind = response.filter((Logement) => Logement.id === Id);
+            setLogement(LogementFind.length === 0 ? error('/error-404'): LogementFind[0]);
         })
     }, [Id])
+
 
     if (Object.keys(Logement).length === 0) return (<div>
         <Header/>
