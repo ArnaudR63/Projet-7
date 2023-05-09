@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from '../Header';
-import ErrorImage from '../Images/Error-404';
-import Footer from '../Footer'; 
+import Header from '../../Components/Header';
+import ErrorImage from '../../Components/Images/Error-404';
+import Footer from '../../Components/Footer'; 
 
 function Error404() {
     return (

@@ -3,7 +3,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import Home from '../pages/Home'
 import Fiche from '../pages/Fiche'
 import About from '../pages/About'
-import Error404 from '../Components/Error'
+import Error404 from '../pages/Error'
 
 const Router = createBrowserRouter(
     [

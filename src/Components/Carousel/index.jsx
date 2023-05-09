@@ -22,10 +22,10 @@ function Slider(props) {
     const Slide = array[slideShow];
     
     return(<div id='carousel'>
-        {array.length !== 1 && (<img src={Arrow} className='reverse arrow' alt='Previous' onClick={() => Previous(slideShow)}/>)}
+        {array.length > 1 && (<img src={Arrow} className='reverse arrow' alt='Previous' onClick={() => Previous(slideShow)}/>)}
         <img src={Slide} className='slideShow' alt=''/>
         <p className='counter'>{slideShow+1 + '/' + array.length}</p>
-        {array.length !== 1 && (<img src={Arrow} className='arrow' alt='Next' onClick={() => Next(slideShow)}/>)}
+        {array.length > 1 && (<img src={Arrow} className='arrow' alt='Next' onClick={() => Next(slideShow)}/>)}
     </div>);
 }
 
